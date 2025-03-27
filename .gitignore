@@ -1,0 +1,17 @@
+# Maven
+target/
+.mvn/
+mvnw
+mvnw.cmd
+
+# IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.metadata/
+
+# Logs and temp files
+*.log
+*.tmp
