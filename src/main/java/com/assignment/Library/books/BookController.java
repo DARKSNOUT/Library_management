@@ -54,7 +54,7 @@ public class BookController {
         String username = getLoggedInUsername(model);
 		book.setUsername(username);
         bookRepository.save(book);
-        return "redirect:list-books";
+        return "redirect:list_books";
     }
     
     @RequestMapping("delete-book")
@@ -78,18 +78,26 @@ public class BookController {
         String username = getLoggedInUsername(model);
 		book.setUsername(username);
         bookRepository.save(book);
-        return "redirect:list-books";
+        return "redirect:list_books";
     }
     
+    // for updating the availability using the button
     @RequestMapping("toggle-availability")
     public String toggleAvailability(@RequestParam int id) {
         Book book = bookRepository.findById(id).get();
         book.setAvail(!book.isAvail());
         bookRepository.save(book);
-        return "redirect:list-books";
+        return "redirect:list_books";
     }
     
-    
+    @RequestMapping(value="find-book",method = RequestMethod.GET)
+    public String Findbook(ModelMap model,@RequestParam String title) {
+    	String username = getLoggedInUsername(model);
+    	List<Book> foundBooks = bookRepository.findByTitleContainingAndUsername(title, username);
+    	model.addAttribute("foundBooks", foundBooks);
+    	model.addAttribute("searchTitle", title);
+    	return "find";
+    }
     
     private String getLoggedInUsername(ModelMap model) {
 		Authentication authentication = 

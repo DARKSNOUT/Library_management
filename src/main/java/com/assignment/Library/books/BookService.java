@@ -49,4 +49,9 @@ public class BookService {
         Book book = findById(id);
         book.setAvail(!book.isAvail());
     }
+    
+    public Book findByTitle(String title) {
+        Predicate<? super Book> predicate = book -> book.getTitle() == title;
+        return books.stream().filter(predicate).findFirst().get();
+    }
 }

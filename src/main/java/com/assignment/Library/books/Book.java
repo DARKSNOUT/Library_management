@@ -3,6 +3,7 @@ package com.assignment.Library.books;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Book {
@@ -23,7 +24,10 @@ public class Book {
 	@Id
 	@GeneratedValue
 	private int id;
+	
+	@NotBlank(message = "Must not be empty")
 	private String title;
+	@NotBlank(message = "Mmust not be empty")
 	private String author;
 	private String genre;
 	private boolean avail;

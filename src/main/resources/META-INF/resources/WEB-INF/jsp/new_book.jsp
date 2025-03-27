@@ -3,6 +3,18 @@
 
 <html>
 <head>
+	<nav class="navbar navbar-expand-md navbar-light bg-light mb-3 p-1">
+	<a class="navbar-brand m-1" href="https://www.ajackus.com/">Jackus</a>
+	<div class="collapse navbar-collapse">
+		<ul class="navbar-nav">
+			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="list_books">Todos</a></li>
+		</ul>
+	</div>
+	<ul class="navbar-nav">
+		<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+	</ul>	
+	</nav>
     <title>${book.id == 0 ? 'Add New' : 'Update'} Book</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -11,7 +23,7 @@
         <h1>${book.id == 0 ? 'Add New' : 'Update'} Book</h1>
         
         <form:form method="post" modelAttribute="book" class="mt-4">
-            
+            	
             <div class="mb-3">
                 <form:label path="title" class="form-label">Title</form:label>
                 <form:input type="text" path="title" class="form-control" required="required"/>
@@ -43,7 +55,7 @@
             <a href="/list-books" class="btn btn-secondary ms-2">Cancel</a>
             
         </form:form>
-    </div>s
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
