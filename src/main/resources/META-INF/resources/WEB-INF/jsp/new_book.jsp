@@ -42,12 +42,7 @@
                 <form:errors path="genre" cssClass="text-danger"/>
             </div>
 
-            <c:if test="${book.id != 0}">
-                <div class="mb-3 form-check">
-                    <form:checkbox path="avail" class="form-check-input" id="avail"/>
-                    <form:label path="avail" class="form-check-label" for="avail">Available</form:label>
-                </div>
-            </c:if>
+            
 
             <form:hidden path="id"/>
             
