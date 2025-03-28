@@ -20,9 +20,9 @@ The best way to run this project is by using an IDE like IntelliJ IDEA or Eclips
 ### Open the project in your IDE.
 
 ### Run the main application class:
-```
+
 LibraryManagementSystemApplication.java
-```
+
 
 ### Access the application:
 Open your browser and visit: 
